@@ -1,0 +1,109 @@
+:root {
+  /* 背景色 — 浅色系 */
+  --bg-primary:    #f0f2f5;
+  --bg-secondary:  #ffffff;
+  --bg-panel:      #f6f8fa;
+  --bg-card:       #ffffff;
+  --bg-hover:      #eef1f5;
+
+  /* 边框 */
+  --border:        #d0d7de;
+  --border-light:  #e8ecf0;
+
+  /* 文字 */
+  --text-primary:  #1a2332;
+  --text-secondary:#57606a;
+  --text-muted:    #9ea7b0;
+  --text-code:     #0550ae;
+
+  /* 设备状态色（保持饱和，浅色背景下仍清晰） */
+  --track-free:     #1a7f37;
+  --track-locked:   #bf8700;
+  --track-occupied: #cf222e;
+  --track-blocked:  #8c959f;
+  --track-free-dim:     rgba(26, 127, 55,  0.12);
+  --track-locked-dim:   rgba(191, 135, 0,  0.14);
+  --track-occupied-dim: rgba(207, 34,  46, 0.12);
+
+  /* 信号色 */
+  --signal-green:  #1a7f37;
+  --signal-yellow: #9a6700;
+  --signal-red:    #cf222e;
+  --signal-off:    #8c959f;
+
+  /* 道岔色 */
+  --turnout-normal:  #1a7f37;
+  --turnout-reverse: #bf8700;
+  --turnout-locked:  #0969da;
+  --turnout-blocked: #8c959f;
+
+  /* 强调色 */
+  --accent-blue:   #0969da;
+  --accent-purple: #8250df;
+  --accent-green:  #1a7f37;
+
+  /* 字体 */
+  --font-mono: "Courier New", Consolas, "Lucida Console", monospace;
+  --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #app {
+  height: 100%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  overflow: hidden;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-panel);
+}
+::-webkit-scrollbar-thumb {
+  background: #c8cdd3;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ea7b0;
+}
+
+/* 通用面板样式 */
+.panel-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+}
+
+/* 状态徽章 */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.badge-free    { background: var(--track-free-dim);     color: var(--track-free);     border: 1px solid var(--track-free); }
+.badge-locked  { background: var(--track-locked-dim);   color: var(--track-locked);   border: 1px solid var(--track-locked); }
+.badge-occupied{ background: var(--track-occupied-dim); color: var(--track-occupied); border: 1px solid var(--track-occupied); }
+.badge-blocked { background: rgba(72,79,88,0.3);        color: var(--track-blocked);  border: 1px solid var(--track-blocked); }
+
+/* 发光效果 */
+.glow-green  { filter: drop-shadow(0 0 6px var(--track-free)); }
+.glow-orange { filter: drop-shadow(0 0 6px var(--track-locked)); }
+.glow-red    { filter: drop-shadow(0 0 6px var(--track-occupied)); }
+.glow-blue   { filter: drop-shadow(0 0 6px var(--accent-blue)); }

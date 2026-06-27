@@ -1,10 +1,23 @@
 {
   "name": "gdjt",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "计算机联锁模拟仿真系统",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "private": true
+  "dependencies": {
+    "vue": "^3.4.0",
+    "vue-router": "^4.3.0",
+    "pinia": "^2.1.7",
+    "naive-ui": "^2.38.0",
+    "@vicons/ionicons5": "^0.12.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "vite": "^5.0.0"
+  }
 }
